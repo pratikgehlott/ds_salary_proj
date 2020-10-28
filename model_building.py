@@ -16,8 +16,7 @@ df = pd.read_csv('eda_data.csv')
 # choose relevant columns
 df.columns
 
-df_model = df[['avg_salary','Rating', 'Size', 'Type of ownership', 'Industry', 'Sector', 'Revenue', 'num_comp', 'hourly', 'employer_provided', 
-               'job_state' , 'same_state' , 'age', 'python_yn', 'spark', 'aws', 'excel', 'job_simp', 'seniority' , 'desc_len']]
+df_model = df[['avg_salary','Rating', 'Size', 'Type of ownership', 'Industry', 'Sector', 'Revenue', 'num_comp', 'hourly', 'employer_provided', 'job_state' , 'same_state' , 'age', 'python_yn', 'spark', 'aws', 'excel', 'job_simp', 'seniority' , 'desc_len']]
 
 
 # get dummy variables (for categorical variable)
@@ -75,7 +74,7 @@ parameters = {'n_estimators':range(10,300,10), 'criterion':('mse','mae'), 'max_f
 
 gs = GridSearchCV(rf,parameters,scoring='neg_mean_absolute_error',cv=3)
 gs.fit(X_train,y_train)
-
+   
 gs.best_score_
 gs.best_estimator_
 
@@ -93,21 +92,21 @@ print(mean_absolute_error(y_test, tpred_rf))
 
 mean_absolute_error(y_test, (tpred_lml + tpred_rf)/2)
 
+import pickle
+pickl = {'model' : gs.best_estimator_ }
+pickle.dump(pickl, open('model_file' + ".p", "wb"))
 
 
 
+import pickle
+file_name = 'model_file.p'
+with open(file_name, 'rb') as pickled:
+    data = pickle.load(pickled)
+    model = data['model']
 
 
 
+model.predict(X_test.iloc[1,:].values.reshape(1,-1))
 
 
-
-
-
-
-
-
-
-
-
-
+list(X_test.iloc[1,:])

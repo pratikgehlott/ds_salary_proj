@@ -1,0 +1,20 @@
+certifi==2020.6.20
+click==7.1.2
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+MarkupSafe @ file:///C:/ci/markupsafe_1594405949945/work
+mkl-fft==1.2.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+numpy @ file:///C:/ci/numpy_and_numpy_base_1603468620949/work
+pandas @ file:///C:/ci/pandas_1602088205210/work
+python-dateutil==2.8.1
+pytz==2020.1
+scikit-learn @ file:///C:/ci/scikit-learn_1598376983131/work
+scipy @ file:///C:/ci/scipy_1597686737426/work
+six==1.15.0
+threadpoolctl @ file:///tmp/tmp9twdgx9k/threadpoolctl-2.1.0-py3-none-any.whl
+Werkzeug==1.0.1
+wincertstore==0.2
